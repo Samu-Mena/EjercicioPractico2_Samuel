@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="layout/layout">
+
+<body>
+
+<h2>Lista de Eventos</h2>
+
+<a href="/eventos/nuevo" class="btn btn-success mb-3">Nuevo Evento</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Fecha</th>
+            <th>Capacidad</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="e : ${eventos}">
+            <td th:text="${e.nombre}"></td>
+            <td th:text="${e.fecha}"></td>
+            <td th:text="${e.capacidad}"></td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

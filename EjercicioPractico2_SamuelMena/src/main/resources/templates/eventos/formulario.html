@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="layout/layout :: contenido">
+
+<div>
+    <h2>Formulario Evento</h2>
+
+    <form th:action="@{/eventos/guardar}" method="post">
+
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+
+        <input type="hidden" th:field="*{id}">
+
+        <div class="mb-2">
+            <input type="text" th:field="*{nombre}" placeholder="Nombre" class="form-control">
+        </div>
+
+        <div class="mb-2">
+            <textarea th:field="*{descripcion}" class="form-control"></textarea>
+        </div>
+
+        <div class="mb-2">
+            <input type="date" th:field="*{fecha}" class="form-control">
+        </div>
+
+        <div class="mb-2">
+            <input type="number" th:field="*{capacidad}" class="form-control">
+        </div>
+
+        <button class="btn btn-primary">Guardar</button>
+    </form>
+</div>
+</html>
