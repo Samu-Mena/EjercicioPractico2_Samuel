@@ -1,1 +1,1 @@
-# EjercicioPractico2_Samue
+# EjercicioPractico2_Samuel
